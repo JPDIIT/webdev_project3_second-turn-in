@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coordinate Coverter from RA-Decl. to Alt-Az</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Gugi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <header id="coord-header">
+    <h1>Astronomical Coordinate Converter</h1>
+    <div id="menu">
+      <img src="images/menu.svg" alt="hamburger menu">
+    </div>
+  </header>
+  <nav id="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="coord-convert.html">Coordinate Converter</a></li>
+      <li><a href="eclipse.html">Eclipse</a></li>
+      <li><a href="resume.html">Resume</a></li>
+    </ul>
+  </nav>
+  <main id="main-content">
+    <section id="convert-coordinates">
+      <h2>Convert Between Equatorial and Horizontal Coordinates</h2>
+      <div class="centered">
+        <img src="images/star_trails.jpg" alt="Star trails over the Ocotillo Garden at night">
+      </div>
+      <section id="formulae">
+        <h2>The Formulae</h2>
+        <figure class="right-image">
+          <img src="images/law-of-haversines.svg" alt="Diagram of law of haversines, showing relationships of measures in spherical geometry">
+          <figcaption>The law of haversines, illustrated, which is used to derive the conversion formulae</figcaption>
+        </figure>
+        <section id="equatorial-to-horizontal">
+          <h3>Equatorial (Right-Ascension, Declination) to Horizontal (Altitude, Azimuth)</h3>
+          <p>Altitude = arcsin(sin(Dec)sin(Lat) + cos(Dec)cos(Lat)cos(LST - RA))</p>
+          <p>Azimuth = arccos((sin(Dec) - Sin(Alt)sin(Lat))/(cos(Alt)cos(Lat)))</p>
+          <p>Dec: declination</p>
+          <p>LST: local sidereal time</p>
+          <p>Lat: observer's latitude</p>
+        </section>
+        <section id="horizontal-to-equatorial">
+          <h3>Horizontal (Altitude, Azimuth) to Equatorial (Right-Ascension, Declination)</h3>
+          <p>Declination = arcsin(sin(Alt)sin(Lat) + cos(Alt)cos(Lat)cos(Az))</p>
+          <p>Right Ascension = LST - arccos((sin(Alt) - sin(Dec)sin(Lat))/(cos(Dec)cos(Lat)))</p>
+          <p>Alt: Altitude</p>
+          <p>Az: Azimuth</p>
+          <p>Source: <a href="https://sceweb.sce.uhcl.edu/helm/WEB-Positional%20Astronomy/Tutorial/Conversion/Conversion.html">University of Houston-Clear Lake</a></p>
+        </section>
+      </section>
+    </section>
+    <section id="coords-explanation">
+      <h2>The Explanation</h2>
+      <section id="horiz-coordinates-are">
+        <h3>Horizontal Coordinates</h3>
+        <figure class="centered">
+          <img src="images/alt-azimuth.svg" alt="Diagram of Altitude and Azimuth coordinates showing horizon, compass directions and star path">
+          <figcaption>An illustration of the horizontal coordinate system</figcaption>
+        </figure>
+        <p>Horizontal coordinates are relative to the locations of individual observers and the planes of their respective horizons. Altitude is an angular measurement relative to the horizon, with 0
+        degrees at the horizon, and 90 degrees "straight up" at what is known as the "zenith." Azimuth is another angular measurement, with the direction toward "true north" (i.e. the
+        North Pole) starting at 0 degrees, and increasing clockwise toward east, south, west, then back to north. While it is easy to find coordinates in this system, they are never 
+        constant or absolute for any astronomical object. Since the Earth is constantly turning on its axis, stars, planets and all other astronomical objects will appear to rotate
+        arount a parallel axis at the observer's location throughout the night (and day.) Therefore, their altitude and azimuth coordinates will constantly change. Also, because each 
+        point on Earth has a different tangential horizon plane, the altitude and azimuth coordinates of every astronomical object will be different for every point on Earth.</p>
+      </section>
+      <section id="eq-coordinates-are">
+        <h3>Equatorial Coordinates</h3>
+        <figure class="centered">
+          <img src="images/ra-decl.svg" alt="Diagram of right ascension and declination coordinates showing horizon, equatorial and ecliptic planes, with north celestial pole and equinox ">
+          <figcaption>An illustration of the equatorial coordinate system</figcaption>
+        </figure>
+        <p>The equatorial coordinates for astronomical objects outside of our solar system are nearly absolute from all locations on Earth, and almost constant over long periods of time.
+        They are the most reliable manner to mark the locations of astronomical objects, but significantly more complicated to determine. Declination is measured from the equatorial plane.
+        This is a plane parallel to the Equator, which corresponds to the observer's lattitude. Objects within our Solar System, especially nearby ones like the Sun and Moon, have slightly
+        different declination coordinates for different locations on Earth (e.g. a maximum of 16 arc seconds for the Sun between the north and south poles.) However, since objects outside of 
+        our Solar System are so far away, the ratio of their distances relative to distances between points on Earth is so extreme that, for most amateur astronomers, the Earth can be considered
+        to be a point, and the planes of its latitudes can also collapse into the Equator's plane. This is likewise the case for the Earth's axis of rotation and the parallel Celestial polar axis around
+        which all astronomical objects appear to orbit (from the observer's perspective.) Declination is an angular measure that is calculated from 0 degrees at the equatorial plane, increasing to 
+        +90 degrees at the North Celestial Pole. Corresponding negative values proceed toward the Celestial South Pole. Right ascension is considerably more complicated. It is also an angular measurement,
+        but it is given in units of time (hours, minutes and seconds.) It proceeds around the equatorial plane, parallel to latitude. The 0h (zero-hour) reference point is at the intersection of the 
+        ecliptic plane (plane of the Earth's orbit around the Sun) and the equatorial plane, in the direction of the Sun. This corresponds to a line of longitude on Earth where the Sun appears to have
+        "risen" to its highest point in the sky at the moment of the Equinox. Hour values increase counter-clockwise as viewed from above the North Pole. At this longitude, stars or objects at 1h right 
+        ascension reach their highest point in the sky one hour later, those at 2h do so after two hours, and so forth.</p>
+      </section>
+    </section>
+    <section id="purpose">
+      <h2>The Purpose</h2>
+      <h3>Astronomical Observations</h3>
+      <p>The most obvious uses for these coordinate systems, and the ability to convert between them, relate to astronomical observations. Most telescopes sit on one of two different types of mounts.
+      These are either "equatorial" mounts, or "alt-azimuth" mounts. As their names suggest, they each rotate in two angular directions which correspond to those of the two different coordinate systems.
+      On an equatorial mount, one axis rotates the telescope according to declination, while the other rotates it according to right ascension. Many models are often motorized to time the right ascension 
+      rotation to keep an astronomical object in constant view. This is useful for astrophotography, whether for long exposures of faint objects, or for frame filtering and stacking algorithms of digital 
+      videos in order to compensate for atmospheric distortions. However, equatorial mounts are typically much more expensive than comparable alt-azimuth mounts, and can be much more difficult to implement
+      for larger telescopes. For amateur astronomers, especially those who aspire to use larger telescopes, the "Dobsonian telescope" is the most practical design. Dobsonian telescopes are Newtonian reflectors
+      which are mounted on inexpensive, but reliable, alt-azimuth mounts. These can be converted into equatorial "platforms," but this is a fixed design that is only useful at a single latitude, which is only
+      practical if the telescope never moves. Therefore, in order to find an astronomical object (especially one that's faint) with a telescope that uses an alt-azimuth mount, one must be able to convert between
+      equatorial and horizontal coordinates. Alt-azimuth mounts can be motorized for seeking and even tracking, but the code which runs the controllers must be able to convert from equatorial to horizontal
+      coordinates as well.</p>
+      <p>In the video below, you can see a timelapse of apparent stellar motion, which is due to the rotation of the Earth. In the long exposure scenes, the arcs made by the stars correspond to the circles
+      that are defined by their declination coordinates. If a telescope observed a star, and remained pointing at a fixed pair of altitude and azimuth coordinates, the star would quickly exit from view. At 
+      most magnification levels and aperture sizes that are commonly used by amateurs, this would happen in a matter a few minutes or seconds.</p>
+      <div id="vid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UNiNJC3UHIo?si=vf-azPv9dQlNbMRK&amp;start=12" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
+        encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+  <footer id="footer">
+    <div id="disc-box">
+      <p class="disclaimer">Site Information and Disclaimer</p>
+      <p class="disclaimer">This website was created as a project for the class ITMD 361: Fundamentals of Web Development at Illinois Tech. All images were either found from public domain sources, or are the author's own work.
+      All opinions and beliefs that are expressed on this website are those of the author, and do not necessarily reflect those of the Illinois Institute of Technology.</p>
+    </div>
+  </footer>
+</body>
+</html>
