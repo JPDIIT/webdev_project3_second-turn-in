@@ -7,7 +7,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Gugi&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <!-- bxSlider CSS file -->
+	<link href="css/jquery.bxslider.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- jQuery library (served from Google) -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<!-- bxSlider Javascript file -->
+	<script src="js/jquery.bxslider.min.js"></script>
   <script src="js/script.js"></script>
 </head>
 <body>
@@ -29,7 +35,13 @@
     <section id="why-astronomy">
       <h2>Why Astronomy?</h2>
       <div class="centered">
-        <img src="images/carina_nebula.jpg" alt="Photo of Carina nebula, taken by the Hubble Space Telescope, green, blue, yellow, orange clouds of gas and dust, bright stars">
+        <div class="slideshow">
+          <ul class="bxslider">
+            <li><img src="images/carina_nebula.jpg"></li>
+            <li><img src="images/andromeda_galaxy.jpg"></li>
+            <li><img src="images/solar_eclipse.jpg"></li>
+          </ul>
+        </div>
       </div>
       <p>"Most people don't look up."</p>
       <p>No five words can better express why so many people miss the appeal, importance and excitement of astronomy. Is astronomy a luxury, a peculiar hobby, an 

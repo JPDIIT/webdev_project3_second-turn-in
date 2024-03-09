@@ -222,6 +222,20 @@ iframe {
   overflow: clip !important;
 }
 
+/* Box Slider*/
+.slideshow {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.slideshow ul {
+  margin:0;
+}
+
+.bx-viewport {
+  background: transparent;
+}
+
 
 /* Higher resolution phones */
 @media screen and (min-width: 800px) and (hover:none) {
