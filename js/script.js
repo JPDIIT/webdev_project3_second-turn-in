@@ -90,7 +90,8 @@ $(document).ready(function(){
 
   $('.bxslider').bxSlider({
     mode: 'fade',
-    auto: true  
+    auto: true,
+    speed: 1200
   });
 
 });
