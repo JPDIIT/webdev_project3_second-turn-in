@@ -233,7 +233,7 @@ iframe {
 }
 
 .bx-viewport {
-  background: transparent;
+  background: transparent !important;
 }
 
 
