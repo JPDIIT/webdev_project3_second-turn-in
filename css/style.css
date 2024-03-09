@@ -234,6 +234,8 @@ iframe {
 
 .bx-viewport {
   background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 .bxslider {
