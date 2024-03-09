@@ -4,7 +4,9 @@ script.src = 'https://maps.googleapis.com/maps/api/js?AIzaSyB41DRUbKWJHPxaFjMAwd
 script.async = true;*/
 $(document).ready(function(){
   $('.bxslider').bxSlider({
-    mode: 'fade'
+    mode: 'fade',
+    auto: true
+    
   });
 
 
