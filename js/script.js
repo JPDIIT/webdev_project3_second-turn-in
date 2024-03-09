@@ -1,23 +1,27 @@
-// Create the script tag, set the appropriate attributes
-/*  var script = document.createElement('script');
-script.src = 'https://maps.googleapis.com/maps/api/js?AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap';
-script.async = true;*/
+/* Show the hamburger menu */
+function showmenu(){
+  const nav = document.getElementById("main-nav");
+  const isVisible = nav.checkVisibility();
+  console.log(isVisible);
+  /* Toggle clicks */
+  if (isVisible) {
+    nav.style.display = "none";
+    nav.style.visibility = "collapse"
+  }
+  else {
+    nav.style.display = "block";
+    nav.style.visibility = "visible";
+  }
+}
 
-$(document).ready(function(){
-
-  $('.bxslider').bxSlider({
-    mode: 'fade',
-    auto: true
-    
-  });
-
-  /* Show the hamburger menu */
-  function showmenu(){
-    const nav = document.getElementById("main-nav");
-    const isVisible = nav.checkVisibility();
-    console.log(isVisible);
-    /* Toggle clicks */
-    if (isVisible) {
+/* Click on the hamburger to reveal the menu*/
+function init(){
+  const menu = document.getElementById("menu");
+  menu.addEventListener("click", (event) => showmenu());
+  window.addEventListener('resize', function(event) {
+    const nav = document.getElementById("main-nav")
+    const showing_burger = menu.checkVisibility();
+    if(showing_burger){
       nav.style.display = "none";
       nav.style.visibility = "collapse"
     }
@@ -25,29 +29,8 @@ $(document).ready(function(){
       nav.style.display = "block";
       nav.style.visibility = "visible";
     }
-    
-  }
-
-  /* Click on the hamburger to reveal the menu*/
-  function init(){
-    const menu = document.getElementById("menu");
-    menu.addEventListener("click", (event) => showmenu());
-    window.addEventListener('resize', function(event) {
-      const nav = document.getElementById("main-nav")
-      const showing_burger = menu.checkVisibility();
-      if(showing_burger){
-        nav.style.display = "none";
-        nav.style.visibility = "collapse"
-      }
-      else {
-        nav.style.display = "block";
-        nav.style.visibility = "visible";
-      }
-    }, true);
-  }
-  
-
-});
+  }, true);
+}
 
  /* Generate the latitude and longitude coordinates of the eclipse's path. */
 function genCoords(){
@@ -101,3 +84,13 @@ function initMap() {
 window.onload = init;
 
 window.initMap = initMap;
+
+/* JQuery for box slider */
+$(document).ready(function(){
+
+  $('.bxslider').bxSlider({
+    mode: 'fade',
+    auto: true  
+  });
+
+});
